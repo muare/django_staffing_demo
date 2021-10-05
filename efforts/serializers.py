@@ -41,4 +41,4 @@ class EffortSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Effort
-        fields = ['id', 'employee', 'project', 'interval']
+        fields = ['id', 'employee', 'project', 'interval','created_date','modified_date']

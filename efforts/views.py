@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework import permissions
 from efforts.models import Customer, Project, Effort
 from efforts.serializers import CustomerSerializer, ProjectSerializer, EffortSerializer
 # Create your views here.
@@ -18,3 +19,4 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class EffortViewSet(viewsets.ModelViewSet):
     queryset = Effort.objects.all()
     serializer_class = EffortSerializer
+    permissions = [permissions.IsAdminUser]

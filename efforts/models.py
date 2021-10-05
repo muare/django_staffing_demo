@@ -84,6 +84,8 @@ class Effort(models.Model):
         Project, on_delete=models.CASCADE, related_name='efforts', verbose_name="项目")
     interval = models.DecimalField(
         max_digits=3, decimal_places=1, verbose_name="工时(小时)")
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    modified_date = models.DateTimeField(auto_now=True, verbose_name="修改时间")
 
     class Meta:
         verbose_name = "工时"
